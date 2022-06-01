@@ -13,8 +13,8 @@ let board, turn, winner
 const squareEls = ['sq0', 'sq1', 'sq2', 'sq3', 'sq4', 'sq5', 'sq6', 'sq7', 'sq8']
 const messageEl = document.querySelector("#message")
 
-console.log(squareEls)
-console.log(messageEl)
+// console.log(squareEls)
+// console.log(messageEl)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -22,18 +22,20 @@ console.log(messageEl)
 
 /*-------------------------------- Functions --------------------------------*/
 
+init()
 
+function init() {
+  // console.log('test')
+  let board = [null, null, null, null, null, null, null, null, null]
+  let turn = 1
+  let winner = null
+  render()
+}
 
-
-
-
-// Step 2 - Store cached element references
-
-  // a) In a constant called `squareEls`, store the nine elements representing 
-  //    the squares on the page.
-
-  // b) In a constant called `messageEl`, store the element that displays the 
-  //    game's status on the page.
+function render() {
+    // console.log('test')
+    
+}
 
 
 // Step 3 - Upon loading, the game state should be initialized, and a function 
