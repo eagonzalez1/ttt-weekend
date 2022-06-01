@@ -29,27 +29,36 @@ function init() {
   board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
-  // render()
+  render()
 }
 
 
-function render(){
-  let sqIndex 
-  squareEls.forEach(function(square, sqIndex){
-    if ()
 
-   })
+function render(){
+  board.forEach(function(square, index){
+    if(square === 1) {
+      squareEls[index].textContent = 'X'
+    } else if (square === -1) {
+      squareEls[index].textContent = 'O'
+    } else {
+      squareEls[index].textContent = ''
+    }
+  })
     if (winner = null) {
       messageEl.textContent = `It is player ${turn}'s turn!`
     } else if (winner === 'T') {
       messageEl.textContent = `It's a tie!`
     } else {
       messageEl.textContent = `Player ${winner} won!`
-      console.log(element)
-      console.log(index)
   }
 }
 
+
+    // if (turn === 1) {
+    //   // code to access the element at the matching index in the squareEls array and set it's textContent to 'X'
+    // } else {
+    //   // code to access the element at the matching index in the squareEls array and set it's textContent to 'O'
+    // }
 
 
 // Step 4 - The state of the game should be rendered to the user
