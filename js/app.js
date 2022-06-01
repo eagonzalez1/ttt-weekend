@@ -10,10 +10,10 @@ let board, turn, winner
 
 /*------------------------ Cached Element References ------------------------*/
 
-const squareEls = ['sq0', 'sq1', 'sq2', 'sq3', 'sq4', 'sq5', 'sq6', 'sq7', 'sq8']
+const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector("#message")
 
-// console.log(squareEls)
+console.log(squareEls)
 // console.log(messageEl)
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -26,33 +26,31 @@ init()
 
 function init() {
   // console.log('test')
-  let board = [null, null, null, null, null, null, null, null, null]
-  let turn = 1
-  let winner = null
-  render()
-}
-
-function render() {
-    // console.log('test')
-    
+  board = [null, null, null, null, null, null, null, null, null]
+  turn = 1
+  winner = null
+  // render()
 }
 
 
-// Step 3 - Upon loading, the game state should be initialized, and a function 
-//          should be called to render this game state
+function render(){
+  let sqIndex 
+  squareEls.forEach(function(square, sqIndex){
+    if ()
 
-  // a) Create a function called `init`.
+   })
+    if (winner = null) {
+      messageEl.textContent = `It is player ${turn}'s turn!`
+    } else if (winner === 'T') {
+      messageEl.textContent = `It's a tie!`
+    } else {
+      messageEl.textContent = `Player ${winner} won!`
+      console.log(element)
+      console.log(index)
+  }
+}
 
-  // b) Call this `init` function when the app loads.
 
-  // c) Set the `board` variable to an array containing nine `null`s to 
-  //    represent empty squares.
-
-  // d) Set the `turn` to `1` - which will represent player X.
-
-  // e) Set the `winner` to `null`.
-
-  // f) Call a function called `render` at the end of the `init` function.
 
 // Step 4 - The state of the game should be rendered to the user
 
@@ -147,4 +145,4 @@ function render() {
   // b) Store the new reset button element in a constant named `resetBtnEl`.
 
   // c) Attach an event listener to the `resetBtnEl`. On the `'click'` event it 
-  //    should call the `init` function you created in 3.
+  //should call the `init` function you created in 3.
