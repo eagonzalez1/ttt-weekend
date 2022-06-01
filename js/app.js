@@ -10,7 +10,11 @@ let board, turn, winner
 
 /*------------------------ Cached Element References ------------------------*/
 
+const squareEls = ['sq0', 'sq1', 'sq2', 'sq3', 'sq4', 'sq5', 'sq6', 'sq7', 'sq8']
+const messageEl = document.querySelector("#message")
 
+console.log(squareEls)
+console.log(messageEl)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -22,16 +26,6 @@ let board, turn, winner
 
 
 
-
-// Step 1 - Define the required variables used to track the state of the game
-
-  // a) Use a variable named `board` to represent the state of the squares on
-  //    the board.
-
-  // b) Use a variable named `turn` to track whose turn it is.
-
-  // c) Use a variable named `winner` to represent if anyone has won yet, or if 
-  //    a tie has occurred.
 
 // Step 2 - Store cached element references
 
