@@ -27,7 +27,11 @@ console.log(squareEls)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+document.querySelector('.board').addEventListener('click', handleClick)
 
+// ******  can't add event listener to HTML collection  ******
+// squareEls.addEventListener("click", handleClick)
+// board.addEventListener("click", handleClick)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -63,34 +67,50 @@ function render(){
 }
 
 
-    // if (turn === 1) {
-    //   // code to access the element at the matching index in the squareEls array and set it's textContent to 'X'
-    // } else {
-    //   // code to access the element at the matching index in the squareEls array and set it's textContent to 'O'
-    // }
+
+// if (board[i]) {
+
+// }
+
+function handleClick(evt) {
+  let sqIdx = parseInt(evt.target.id.slice(2))
+  
+  console.log(sqIdx)
+  
+  if(board[sqIdx] !== null) {
+    return
+  } 
+
+  if (winner !== null) {
+    return
+  }
+
+  board[sqIdx] = turn
+
+  console.log(board)
+  // board.splice(sqIdx, 1, turn)
+
+  // turn = turn*(-1)
+  // getWinner()
+  // render()
+}
+
+// function getWinner() {
+
+//   winnerCombos.forEach(function(element,))
+
+// }
 
 
-// Step 4 - The state of the game should be rendered to the user
 
-  // a) Create a function called `render`.
+// let sqIdx = parseInt(evt.target.id.replace('sq',''));
 
-  // b) Loop over `board` and for each element:
-  //    - Use the current index of the iteration to access the corresponding 
-  //      square in the `squareEls` array.
-  //    - Style that square however you wish, dependent on the value contained 
-  //      in the current cell being iterated over (`-1`, `1`, or `null`).
+// let sqIdx = parseInt(evt.target.id.replace('sq',''));
+//   if (board[sqIdx] !== 'null') return;
+//   getWinner();
+//   render(squareIdx);
 
-  // c) Render a message based on the current game state:
-  //    - If winner has a value of `null` (meaning the game is still in
-  //      progress), render whose turn it is.
-  //    - If `winner` is equal to `'T'` (tie), render a tie message.
-  //    - Otherwise, render a congratulatory message to the player that has won.
-    
 
-// Step 5 - Define the required constants
-
-  // a) In a constant called `winningCombos` define the eight possible winning 
-  //    combinations as an array of arrays.
 
 // Step 6 - Handle a player clicking a square with a `handleClick` function
 
