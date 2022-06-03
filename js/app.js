@@ -21,9 +21,6 @@ const squareEls = document.querySelectorAll('.square')
 const messageEl = document.querySelector("#message")
 const resetBtnEl = document.querySelector("#resetBtn")
 
-// console.log(squareEls)
-// console.log(resetBtnEl)
-
 /*----------------------------- Event Listeners -----------------------------*/
 
 document.querySelector('.board').addEventListener('click', handleClick)
@@ -38,7 +35,6 @@ resetBtnEl.addEventListener("click", init)
 init()
 
 function init() {
-  // console.log('test')
   board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
@@ -48,26 +44,26 @@ function init() {
 function render(){
   board.forEach(function(square, index){
     if(square === 1) {
-      squareEls[index].textContent = 'X'
+      squareEls[index].textContent = '📼'
     } else if (square === -1) {
-      squareEls[index].textContent = 'O'
+      squareEls[index].textContent = '🛼'
     } else {
       squareEls[index].textContent = ''
     }
   })
     if (turn === 1 && winner === null) {
-      messageEl.textContent = `It's X's turn!`
+      messageEl.textContent = `It's 📼's turn!`
     } else if (turn === -1 && winner === null) {
-      messageEl.textContent = `It's O's turn!`
+      messageEl.textContent = `It's 🛼's turn!`
     }
     else if (winner === 1) {
-      messageEl.textContent = `Player X won!!!`
+      messageEl.textContent = `Player 📼 won!!! 🥳`
     } 
     else if (winner === -1) {
-      messageEl.textContent = `Player O won!!!`
+      messageEl.textContent = `Player 🛼 won!!! 🎉 😃`
     } 
     else if (winner === 'T') {
-      messageEl.textContent = `It's a tie!`
+      messageEl.textContent = `The 80's called ☎️, they want their tie back!! 🙄`
     }
 }
 
@@ -86,8 +82,14 @@ function handleClick(evt) {
   render()
 }
 
-// I wasn't able to fully understand the instructions for the getWinner looping function over the winningCombos array, and saw this method in one of the examples provided. I know there's a more efficient way to figure out the winner, but had to brute force it this way.
+// I wasn't able to fully understand the instructions for the getWinner looping function over the winningCombos array, and saw this method used in one of the examples provided. I know there's a more efficient way to figure out the winner, but had to brute force it this way.
   function getWinner() {
+    const tieGame = board.every((square) => {
+      return square !== null
+    })
+    if (tieGame === true) {
+      winner = 'T'
+    }
     if (board[0]+board[1]+board[2] === 3 ||  
         board[3]+board[4]+board[5] === 3 ||  
         board[6]+board[7]+board[8] === 3 ||  
@@ -97,7 +99,7 @@ function handleClick(evt) {
         board[0]+board[4]+board[8] === 3 ||  
         board[2]+board[4]+board[6] === 3) {
           winner = 1
-   }   
+}   
     if (board[0]+board[1]+board[2] === -3 ||  
         board[3]+board[4]+board[5] === -3 ||  
         board[6]+board[7]+board[8] === -3 ||  
