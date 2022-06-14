@@ -90,6 +90,12 @@ function handleClick(evt) {
     if (tieGame === true) {
       winner = 'T'
     }
+
+//     // we can do:
+// winningCombos.forEach(combo => {
+//   if( board[combo[0]] + board[combo[1]] + board[combo[2]])  === 3 ) { ... } 
+// }
+
     if (board[0]+board[1]+board[2] === 3 ||  
         board[3]+board[4]+board[5] === 3 ||  
         board[6]+board[7]+board[8] === 3 ||  
@@ -111,4 +117,9 @@ function handleClick(evt) {
           winner = -1
 }   
 }
+
+// // we can do:
+// winningCombos.forEach(combo => {
+//   if( board[combo[0]] + board[combo[1]] + board[combo[2]])  === 3 ) { ... } 
+// }
 
